@@ -16,11 +16,12 @@
 # Glossary
 - *Customer* is an individual or business owner looking for a rider to comlete a job 
 - *Rider* is a qualified individual that can deliver and pick up packages for customers
-- *Job* a task that needs to be completed by the rider
+- *Job* a task that needs to be completed by the customer e.g. A customer wants to deliver a package to his client across the city
 
 # Out of Scope
 - No payment feature
 - No data encryption
+- Minimal Authentication
 
 # Assumptions
 - All riders are vetted and trusted
@@ -60,6 +61,7 @@
     - Package description
     - Pick up address
     - Destination address
+    - Status
 4. Track jobs
     - Get live status update on the job
 5. Update my account information
@@ -84,5 +86,5 @@
     - Address
     - Phone 
 6. Manage previous jobs
-7. Rate riders
+7. Rate customers
 
