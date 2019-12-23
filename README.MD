@@ -91,7 +91,11 @@ A demo application showing microservices
 6. Manage previous jobs
 7. Rate customers
 
-# Stack
+    <p align="left">
+    <img src="Airnd-Bucket.png" alt=""/>
+    </p>
+
+# Stack & Tools
 - [ ] Containers [Docker & Docker-Compose](https://www.docker.com/)
 - [ ] Container Orchestration [Kubernetes](https://kubernetes.io/)
 - [ ] CI for Kubernetes-native applications [skaffold](https://skaffold.dev/)
@@ -112,7 +116,7 @@ A demo application showing microservices
 - [ ] Material UI [Vue](https://vuematerial.io/components/app)
 
 # Services
-- [ ] `Customer UI` (React, material-ui)
+- [ ] `Customer UI` (React, material-ui, Docker)
     - [ ] Signup
     - [ ] Login
     - [ ] Explore and find riders
@@ -125,7 +129,7 @@ A demo application showing microservices
     - [ ] Chat messenger
     - [ ] List job history
 
-- [ ] `Rider UI` (Angular, material-ui)
+- [ ] `Rider UI` (Angular, material-ui, Docker)
     - [ ] Signup
     - [ ] Login
     - [ ] List my jobs
@@ -134,7 +138,7 @@ A demo application showing microservices
     - [ ] Chat messenger
     - [ ] List job history
 
-- [ ] `History UI` (Vue, material-ui)
+- [ ] `History UI` (Vue, material-ui, Docker)
     - [ ] Signup
     - [ ] Login
     - [ ] List my jobs
@@ -143,33 +147,36 @@ A demo application showing microservices
     - [ ] Chat messenger
     - [ ] List job history
 
-- [ ] `Job` (REST, MongoDB, Python)
+- [ ] `REST API Gateway` (Traefik, Docker)
+    - [ ] It receives requests on behalf of the system and finds out which components are responsible for handling them.
+
+- [ ] `Job` (REST, MongoDB, Python, Docker)
     - [ ] Create job
     - [ ] Get job
     - [ ] Delete job
     - [ ] Update job
 
-- [ ] `Auth` (REST, gRPC, Python)
+- [ ] `Auth` (REST, gRPC, Python, Docker)
     - [ ] Generate user token for app access
     - [ ] Renew user tokens for app access
     - [ ] Check if token is valid
 
-- [ ] `User` (REST, Postgresql, Go)
+- [ ] `User` (REST, Postgresql, Go, Docker)
     - [ ] Sign up
     - [ ] Login
     - [ ] Get user
     - [ ] Delete user
     - [ ] Update user
 
-- [ ] `Chat` (Web-Socket, GO)
+- [ ] `Chat` (Web-Socket, Go, Docker)
     - Creates rooms for users to chat
 
-- [ ] `Notification` (REST, Message Broker, CockroachDB, JAVA, spring)
+- [ ] `Notification` (REST, Message Broker, CockroachDB, JAVA, spring, Docker)
     - [ ] Create notification 
     - [ ] Delete notification
 
 
-- [ ] `History` (GraphQL, NodeJS, Typescript)
+- [ ] `History` (GraphQL, NodeJS, Typescript, Docker)
     - [ ] Get job history for Riders and Customers
     - [ ] Get notifications created linked to a job 
 
