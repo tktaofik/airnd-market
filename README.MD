@@ -91,3 +91,21 @@ A demo application showing microservices
 6. Manage previous jobs
 7. Rate customers
 
+# Stack
+- [ ] Containers [Docker & Docker-Compose](https://www.docker.com/)
+- [ ] Container Orchestration [Kubernetes](https://kubernetes.io/)
+- [ ] CI for Kubernetes-native applications [skaffold](https://skaffold.dev/)
+- [ ] Customer UI [React](https://reactjs.org/)
+- [ ] Rider UI [Angular](https://angular.io/)
+- [ ] Job History [Vue](https://vuejs.org/)
+- [ ] Web gateway [Nginx](https://www.nginx.com/)
+- [ ] Rest API Gateway [Traefik](https://containo.us/traefik/)
+- [ ] GraphQL API Gateway [GraphQL](https://graphql.org/)
+- [ ] Message Broker [NATS](https://nats.io/)
+- [ ] Caching [Redis](https://redis.io/)
+- [ ] Web Sockets [Socket io](Socket.io)
+- [ ] Search Engine [Elastic Search](https://www.elastic.co/)
+- [ ] Load Generator [Python](https://locust.io/)
+- [ ] RPC [gRPC](https://grpc.io/)
+
+
