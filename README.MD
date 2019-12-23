@@ -1,5 +1,8 @@
 # Summary 
-A demo application showing microservices
+A demo application showing developement of microservices, service interactions, monitoring e.t.c.
+
+# Architecture
+<p align="center"> <img src="Airnd-Bucket.png" alt=""/> </p>
 
 # Problem
 - Customers today have a lot tasks they do not have the man power to accomplish, therefore they are willing to designate a lot of this tasks to private contractors and riders.
@@ -90,9 +93,6 @@ A demo application showing microservices
     - Phone 
 6. Manage previous jobs
 7. Rate customers
-
-# Architecture
-<p align="center"> <img src="Airnd-Bucket.png" alt=""/> </p>
  
 # Stack & Tools
 - [ ] Containers [Docker & Docker-Compose](https://www.docker.com/)
@@ -178,5 +178,8 @@ A demo application showing microservices
 - [ ] `History` (GraphQL, NodeJS, Typescript, Docker)
     - [ ] Get job history for Riders and Customers
     - [ ] Get notifications created linked to a job 
+
+- [ ] `Load-generator` (Python, Docker)
+    - [ ] Generate load for the services
 
 
