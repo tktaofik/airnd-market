@@ -1,4 +1,7 @@
-# Description
+# Summary 
+A demo application showing microservices
+
+# Problem
 - Customers today have a lot tasks they do not have the man power to accomplish, therefore they are willing to designate a lot of this tasks to private contractors and riders.
 - This solution will focus on the *rider* niche, it will provide a market place to find riders and manage the job assigned to a rider.
 - Help riders run a more efficient business
