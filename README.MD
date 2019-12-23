@@ -91,10 +91,9 @@ A demo application showing microservices
 6. Manage previous jobs
 7. Rate customers
 
-    <p align="left">
-    <img src="Airnd-Bucket.png" alt=""/>
-    </p>
-
+# Architecture
+<p align="center"> <img src="Airnd-Bucket.png" alt=""/> </p>
+ 
 # Stack & Tools
 - [ ] Containers [Docker & Docker-Compose](https://www.docker.com/)
 - [ ] Container Orchestration [Kubernetes](https://kubernetes.io/)
