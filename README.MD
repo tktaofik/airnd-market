@@ -14,9 +14,9 @@
 - [ ] Riders can manage job history
 
 # Glossary
-- *Customer* is an individual or business owner looking for a rider to comlete a job 
-- *Rider* is a qualified individual that can deliver and pick up packages for customers
-- *Job* a task that needs to be completed by the customer e.g. A customer wants to deliver a package to his client across the city
+- `Customer` is an individual or business owner looking for a rider to comlete a job 
+- `Rider` is a qualified individual that can deliver and pick up packages for customers
+- `Job` an open ended task that needs to be completed by the customer e.g. A customer wants to deliver a package to his client across the city
 
 # Out of Scope
 - No payment feature
