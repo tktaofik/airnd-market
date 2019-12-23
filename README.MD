@@ -107,5 +107,70 @@ A demo application showing microservices
 - [ ] Search Engine [Elastic Search](https://www.elastic.co/)
 - [ ] Load Generator [Python](https://locust.io/)
 - [ ] RPC [gRPC](https://grpc.io/)
+- [ ] Material UI [Angular](https://material.angular.io/)
+- [ ] Material UI [React](https://material-ui.com/)
+- [ ] Material UI [Vue](https://vuematerial.io/components/app)
+
+# Services
+- [ ] `Customer UI` (React, material-ui)
+    - [ ] Signup
+    - [ ] Login
+    - [ ] Explore and find riders
+    - [ ] Create jobs
+    - [ ] Assign jobs to riders
+    - [ ] List jobs
+    - [ ] Delete job
+    - [ ] Update job
+    - [ ] List notifications
+    - [ ] Chat messenger
+    - [ ] List job history
+
+- [ ] `Rider UI` (Angular, material-ui)
+    - [ ] Signup
+    - [ ] Login
+    - [ ] List my jobs
+    - [ ] Update job status
+    - [ ] List notifications
+    - [ ] Chat messenger
+    - [ ] List job history
+
+- [ ] `History UI` (Vue, material-ui)
+    - [ ] Signup
+    - [ ] Login
+    - [ ] List my jobs
+    - [ ] Update job status
+    - [ ] List notifications
+    - [ ] Chat messenger
+    - [ ] List job history
+
+- [ ] `Job` (REST, MongoDB, Python)
+    - [ ] Create job
+    - [ ] Get job
+    - [ ] Delete job
+    - [ ] Update job
+
+- [ ] `Auth` (REST, gRPC, Python)
+    - [ ] Generate user token for app access
+    - [ ] Renew user tokens for app access
+    - [ ] Check if token is valid
+
+- [ ] `User` (REST, Postgresql, Go)
+    - [ ] Sign up
+    - [ ] Login
+    - [ ] Get user
+    - [ ] Delete user
+    - [ ] Update user
+
+- [ ] `Chat` (Web-Socket, GO)
+    - Creates rooms for users to chat
+
+- [ ] `Notification` (REST, Message Broker, CockroachDB, JAVA, spring)
+    - [ ] Create notification 
+    - [ ] Delete notification
+
+
+- [ ] `History` (GraphQL, NodeJS, Typescript)
+    - [ ] Get job history for Riders and Customers
+    - [ ] Get notifications created linked to a job 
 
 
