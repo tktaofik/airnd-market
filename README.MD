@@ -2,7 +2,7 @@
 A demo application showing developement of microservices, service interactions, monitoring e.t.c.
 
 # Architecture
-<p align="center"> <img src="Airnd-Bucket.png" alt=""/> </p>
+<p align="center"> <img src="docs/architecture.png" alt=""/> </p>
 
 # Problem
 - Customers today have a lot tasks they do not have the man power to accomplish, therefore they are willing to designate a lot of this tasks to private contractors and riders.
