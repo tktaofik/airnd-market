@@ -14,11 +14,6 @@ port = os.getenv("POSTGRES_PORT", 5432)
 
 meta = MetaData()
 
-user = os.getenv("POSTGRES_USER", "root")
-password = os.getenv("POSTGRES_PASSWORD", "password")
-host = os.getenv("POSTGRES_HOST", "localhost")
-port = os.getenv("POSTGRES_PORT", 5432)
-
 
 class Status(enum.Enum):
     new = "new"
