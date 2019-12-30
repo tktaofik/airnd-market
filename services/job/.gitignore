@@ -1,5 +1,2 @@
-# Artifacts
 ENV
-
-# Test files
-
+*__pycache__

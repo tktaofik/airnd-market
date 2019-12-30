@@ -4,9 +4,9 @@
 help:
 	@echo "make prepare-dev"
 	@echo "    Create python virtual environment."
-	@echo "make run"
+	@echo "make start"
 	@echo "    Run server."
-	@echo "make run_server"
+	@echo "make start_watch"
 	@echo "    Run server and watch for changes"
 	@echo "make lint"
 	@echo "    Run lint on project."
@@ -27,11 +27,11 @@ prepare-dev:
 
 venv: ENV/bin/activate
 
-run: venv
-	@python src/app.py 
+start: venv
+	@python app.py 
 
-run_watch: venv
-	@nodemon src/app.py 
+start_watch: venv
+	@nodemon app.py 
 lint: 
 
 test: 
@@ -39,9 +39,9 @@ test:
 build:
 
 clean:
-	rm -rf ENV
+	@rm -rf ENV
 
 install:
-	pip install --upgrade pip
-	pip install -r requirements.txt
-	pip freeze > requirements.txt
+	@pip install --upgrade pip
+	@pip install -r requirements.txt
+	@pip freeze > requirements.txt
