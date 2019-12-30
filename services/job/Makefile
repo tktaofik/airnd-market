@@ -8,6 +8,8 @@ help:
 	@echo "    Run server."
 	@echo "make start_watch"
 	@echo "    Run server and watch for changes"
+	@echo "make service_dependencies"
+	@echo "    Install service dependencies and initialize database"
 	@echo "make lint"
 	@echo "    Run lint on project."
 	@echo "make test"
@@ -32,6 +34,12 @@ start: venv
 
 start_watch: venv
 	@nodemon app.py 
+	
+service_dependencies:
+	@docker-compose up --force-recreate --remove-orphans -d
+	@sleep 10
+	@python db/init_db.py
+	
 lint: 
 
 test: 
@@ -39,7 +47,7 @@ test:
 build:
 
 clean:
-	@rm -rf ENV
+	@rm -rf `find . -name __pycache__`
 
 install:
 	@pip install --upgrade pip

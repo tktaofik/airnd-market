@@ -12,6 +12,22 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 - [ ] Get a job
 - [ ] Get jobs owned by a user
 
+## Model
+
+```json
+{
+  "id": String,
+  "userId": String,
+  "riderId": String,
+  "title": String,
+  "status": new | inProgress | cancelled | done,
+  "address": String,
+  "description": String,
+  "createdAt": Date,
+  "updatedAt": Date
+}
+```
+
 ## Data Sources
 
 - N/A
@@ -69,12 +85,14 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 ### Install dependencies and virtual environment
 
 - Install _brew_ on your system
+- Install _Docker_ on your system
 - Install _nodeJS_ globally on your system
 - Install _nodemon_ globally on your system run `npm i -g nodemon`
 - Install _pyenv_ to install multiple versions of python `brew install pyenv`
 - Install virtual environment `make prepare-dev`
 - Activate dev virtual environment run `source ./ENV/bin/activate`
 - Install _dependencies_ run `make install`
+- Install service dependencies and initialize database run `make service_dependencies`
 
 ### Run service
 
