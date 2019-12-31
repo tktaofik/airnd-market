@@ -9,7 +9,7 @@ help:
 	@echo "make start_watch"
 	@echo "    Run server and watch for changes"
 	@echo "make service_dependencies"
-	@echo "    Install service dependencies and initialize database"
+	@echo "    Install service dependencies and create database"
 	@echo "make lint"
 	@echo "    Run lint on project."
 	@echo "make test"
@@ -38,8 +38,10 @@ start_watch: venv
 service_dependencies:
 	@docker-compose up --remove-orphans -d
 	@sleep 10
-	@python db/init.py
-	@python db/seed.py
+	@python init_db.py
+
+teardown_db:
+	@python teardown_db.py
 	
 lint: 
 
