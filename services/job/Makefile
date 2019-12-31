@@ -36,9 +36,10 @@ start_watch: venv
 	@nodemon app.py 
 	
 service_dependencies:
-	@docker-compose up --force-recreate --remove-orphans -d
+	@docker-compose up --remove-orphans -d
 	@sleep 10
-	@python db/init_db.py
+	@python db/init.py
+	@python db/seed.py
 	
 lint: 
 
