@@ -2,6 +2,8 @@ aiodns==2.0.0
 aiohttp==3.6.2
 aiopg==1.0.0
 async-timeout==3.0.1
+asyncpg==0.20.0
+asyncpgsa==0.26.1
 attrs==19.3.0
 brotlipy==0.7.0
 cchardet==2.1.5

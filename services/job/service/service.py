@@ -1,27 +1,34 @@
 import json
 from aiohttp import web
-# from db.tables import job
+
+from . import db
 
 
 class JobService:
 
-    async def create_job(self, request):
-        body = json.loads(await request.text())
-        return body
-        # try:
-        #     # job = Job()
-        #     # for k, v in body.items():
-        #     #     setattr(job, k, v)
-        #     # session.add(job)
-        #     # session.commit()
-        #     # session.refresh(job)
-        #     # res = session.query(Job).filter(
-        #     #     Job.id == job.id).first()
+    @staticmethod
+    async def create_job(request):
+        async with request.app['db_pool'].acquire() as conn:
+            data = json.loads(await request.text())
+            try:
+                res = await db.create_job(conn, data)
+                return res
+            except Exception as err:
+                print(err)
+            # try:
+            #     # job = Job()
+            #     # for k, v in body.items():
+            #     #     setattr(job, k, v)
+            #     # session.add(job)
+            #     # session.commit()
+            #     # session.refresh(job)
+            #     # res = session.query(Job).filter(
+            #     #     Job.id == job.id).first()
 
-        #     # print(res.tojson())
-        #     return body
-        # except SQLAlchemyError as e:
-        #     print(e)
+            #     # print(res.tojson())
+            #     return body
+            # except SQLAlchemyError as e:
+            #     print(e)
 
     def delete_job(self):
         print("delete_job")

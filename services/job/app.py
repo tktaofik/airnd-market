@@ -4,7 +4,7 @@ import sys
 from aiohttp import web
 
 from service.routes import routes
-from service.db import init_pg, close_pg
+from service.db import init_db
 from service.config import get_config
 
 
@@ -12,11 +12,11 @@ async def init_app(argv=None):
 
     app = web.Application()
 
+    # save app config in app
     app['config'] = get_config(argv)
 
-    # create db connection on startup, shutdown on exit
-    app.on_startup.append(init_pg)
-    app.on_cleanup.append(close_pg)
+    # create db pool connection
+    await init_db(app)
 
     # setup  routes
     app.add_routes(routes)

@@ -1,6 +1,7 @@
 import enum
 
 import aiopg.sa
+import asyncpgsa
 
 from datetime import datetime
 
@@ -12,6 +13,9 @@ from sqlalchemy import (
 
 # session should be recreated
 # https://stackoverflow.com/questions/12223335/sqlalchemy-creating-vs-reusing-a-session
+
+# python-sqlalchemy
+# https://www.pythonsheets.com/notes/python-sqlalchemy.html#insert-create-an-insert-statement
 
 meta = MetaData()
 
@@ -40,20 +44,23 @@ job = Table(
 )
 
 
-async def init_pg(app):
-    conf = app['config']['postgres']
-    engine = await aiopg.sa.create_engine(
-        database=conf['database'],
-        user=conf['user'],
-        password=conf['password'],
-        host=conf['host'],
-        port=conf['port'],
-        minsize=conf['minsize'],
-        maxsize=conf['maxsize'],
+async def init_db(app):
+    config = app['config']['postgres']
+    DSN = "postgresql://{user}:{password}@{host}:{port}/{database}"
+    DB_URL = DSN.format(
+        user=config['user'],
+        password=config['password'],
+        database=config['database'],
+        host=config['host'],
+        port=config['port'],
     )
-    app['db'] = engine
+    pool = await asyncpgsa.create_pool(dsn=DB_URL)
+    app['db_pool'] = pool
+
+    return pool
 
 
-async def close_pg(app):
-    app['db'].close()
-    await app['db'].wait_closed()
+async def create_job(conn, data):
+    print(data)
+    result = await conn.execute(job.insert(), [data])
+    return await result.fetchone()
