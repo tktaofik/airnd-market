@@ -15,20 +15,6 @@ class JobService:
                 return res
             except Exception as err:
                 print(err)
-            # try:
-            #     # job = Job()
-            #     # for k, v in body.items():
-            #     #     setattr(job, k, v)
-            #     # session.add(job)
-            #     # session.commit()
-            #     # session.refresh(job)
-            #     # res = session.query(Job).filter(
-            #     #     Job.id == job.id).first()
-
-            #     # print(res.tojson())
-            #     return body
-            # except SQLAlchemyError as e:
-            #     print(e)
 
     def delete_job(self):
         print("delete_job")

@@ -57,10 +57,6 @@ async def init_db(app):
     pool = await asyncpgsa.create_pool(dsn=DB_URL)
     app['db_pool'] = pool
 
-    return pool
-
 
 async def create_job(conn, data):
-    print(data)
-    result = await conn.execute(job.insert(), [data])
-    return await result.fetchone()
+    await conn.execute(job.insert(data))

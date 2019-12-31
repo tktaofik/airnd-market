@@ -25,7 +25,7 @@ async def init_app(argv=None):
 
 
 def main(argv):
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.ERROR)
 
     app = init_app(argv)
 
