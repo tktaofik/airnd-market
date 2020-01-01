@@ -2,8 +2,9 @@
 import argparse
 import pathlib
 
+import trafaret as T
+
 from trafaret_config import commandline
-from service.utils import TRAFARET
 
 
 BASE_DIR = pathlib.Path(__file__).parent.parent
@@ -19,6 +20,21 @@ def get_config(argv=None):
 
     # ignore unknown options
     options, unknown = ap.parse_known_args(argv)
+
+    TRAFARET = T.Dict({
+        T.Key('postgres'):
+        T.Dict({
+            'database': T.String(),
+            'user': T.String(),
+            'password': T.String(),
+            'host': T.String(),
+            'port': T.Int(),
+            'minsize': T.Int(),
+            'maxsize': T.Int(),
+        }),
+        T.Key('host'): T.IP,
+        T.Key('port'): T.Int(),
+    })
 
     config = commandline.config_from_options(options, TRAFARET)
     return config

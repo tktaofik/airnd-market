@@ -1,9 +1,7 @@
 import enum
 
-import aiopg.sa
-import asyncpgsa
-
 from datetime import datetime
+from asyncpgsa import pg
 
 from sqlalchemy import (
     create_engine, MetaData, Table, Column, ForeignKey,
@@ -11,11 +9,15 @@ from sqlalchemy import (
 )
 
 
-# session should be recreated
+# why session should be recreated
 # https://stackoverflow.com/questions/12223335/sqlalchemy-creating-vs-reusing-a-session
 
 # python-sqlalchemy
 # https://www.pythonsheets.com/notes/python-sqlalchemy.html#insert-create-an-insert-statement
+
+# sqlalchemy Data types
+# https://www.oreilly.com/library/view/essential-sqlalchemy/9780596516147/ch04.html
+
 
 meta = MetaData()
 
@@ -27,10 +29,8 @@ class Status(enum.Enum):
     done = "done"
 
 
-# sqlalchemy Data types https://www.oreilly.com/library/view/essential-sqlalchemy/9780596516147/ch04.html
 job = Table(
     'job', meta,
-
     Column("id", Integer, primary_key=True),
     Column("userId", String),
     Column("riderId", String),
@@ -46,17 +46,17 @@ job = Table(
 
 async def init_db(app):
     config = app['config']['postgres']
-    DSN = "postgresql://{user}:{password}@{host}:{port}/{database}"
-    DB_URL = DSN.format(
-        user=config['user'],
-        password=config['password'],
-        database=config['database'],
+    await pg.init(
         host=config['host'],
         port=config['port'],
+        database=config['database'],
+        user=config['user'],
+        password=config['password'],
+        min_size=1,
+        max_size=10
     )
-    pool = await asyncpgsa.create_pool(dsn=DB_URL)
-    app['db_pool'] = pool
 
 
-async def create_job(conn, data):
-    await conn.execute(job.insert(data))
+async def create_job(data):
+    async with pg.transaction() as conn:
+        await conn.execute(job.insert(data))
