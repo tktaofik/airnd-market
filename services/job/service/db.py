@@ -59,4 +59,7 @@ async def init_db(app):
 
 async def create_job(data):
     async with pg.transaction() as conn:
-        await conn.execute(job.insert(data))
+        try:
+            await conn.execute(job.insert(data))
+        except Exception as err:
+            print(err)
