@@ -1,4 +1,5 @@
 import enum
+import json
 
 from datetime import datetime
 from asyncpgsa import pg
@@ -17,6 +18,9 @@ from sqlalchemy import (
 
 # sqlalchemy Data types
 # https://www.oreilly.com/library/view/essential-sqlalchemy/9780596516147/ch04.html
+
+# asyncpgsa
+# https://asyncpgsa.readthedocs.io/en/latest/#
 
 
 meta = MetaData()
@@ -53,13 +57,17 @@ async def init_db(app):
         user=config['user'],
         password=config['password'],
         min_size=1,
-        max_size=10
+        max_size=10,
     )
 
 
 async def create_job(data):
-    async with pg.transaction() as conn:
-        try:
-            await conn.execute(job.insert(data))
-        except Exception as err:
-            print(err)
+    try:
+        row = await pg.fetchrow(job.insert(data))
+        row = await pg.fetchrow(job.select().where(job.c.id == row['id']))
+        row_dict = dict(row)
+        row_dict["createdAt"] = row_dict["createdAt"].isoformat()
+        row_dict["updatedAt"] = row_dict["updatedAt"].isoformat()
+        return json.dumps(row_dict)
+    except Exception as err:
+        raise err

@@ -10,6 +10,6 @@ routes = web.RouteTableDef()
 async def post_handler(request):
     try:
         data = await JobService.create_job(request)
-        return web.json_response(data=data, status=200)
+        return web.json_response(body=data, status=200)
     except Exception as err:
         print(err)
