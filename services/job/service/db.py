@@ -6,7 +6,7 @@ from asyncpgsa import pg
 
 from sqlalchemy import (
     create_engine, MetaData, Table, Column, ForeignKey,
-    Integer, String, Date, Enum, literal_column
+    Integer, String, DateTime, Enum, literal_column
 )
 
 from service.utils import json_serial
@@ -46,8 +46,8 @@ job = Table(
     Column("pickupAddress", String),
     Column("dropoffAddress", String),
     Column("description", String),
-    Column("createdAt", Date, default=datetime.now()),
-    Column("updatedAt", Date, default=datetime.now())
+    Column("createdAt", DateTime, default=datetime.utcnow()),
+    Column("updatedAt", DateTime, default=datetime.utcnow())
 )
 
 
