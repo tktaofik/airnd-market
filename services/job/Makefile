@@ -2,8 +2,6 @@
 .DEFAULT: help
 
 help:
-	@echo "make prepare-dev"
-	@echo "    Create python virtual environment."
 	@echo "make start"
 	@echo "    Run server."
 	@echo "make start_watch"
@@ -21,19 +19,13 @@ help:
 	@echo "make install"
 	@echo "    Install packages."
 
-prepare-dev:
-	@which ENV && rm -rf ENV
-	@which pyenv || pyenv install 3.8.0
-	@which virtualenv || python3 -m pip install virtualenv
-	@virtualenv ENV
-
-venv: ENV/bin/activate
+venv: ../../python_venv/bin/activate
 
 start: venv
 	@python app.py 
 
 start_watch: venv
-	@nodemon app.py 
+	@nodemon -L app.py 
 	
 service_dependencies:
 	@docker-compose up --remove-orphans -d

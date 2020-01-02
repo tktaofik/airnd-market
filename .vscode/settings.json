@@ -1,4 +1,6 @@
 {
-    "editor.formatOnSave": true,
-    "python.autoComplete.addBrackets": true
+  "editor.formatOnSave": true,
+  "python.autoComplete.addBrackets": true,
+  "python.pythonPath": "./python_venv/bin/python3.8",
+  "python.autoComplete.extraPaths": ["./services/job"]
 }
