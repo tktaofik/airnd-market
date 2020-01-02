@@ -2,7 +2,6 @@ import json
 from aiohttp import web
 
 from . import db
-from . import utils
 
 
 class JobService:
@@ -12,7 +11,7 @@ class JobService:
         data = json.loads(await request.text())
         try:
             job = await db.create_job(data)
-            return json.dumps(job, default=utils.json_serial)
+            return job
         except Exception as err:
             print(err)
 
