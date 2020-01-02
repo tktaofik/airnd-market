@@ -9,8 +9,6 @@ from sqlalchemy import (
     Integer, String, DateTime, Enum, literal_column
 )
 
-from service.utils import json_serial
-
 # LINKS:
 
 # why session should be recreated
@@ -68,6 +66,6 @@ async def create_job(data):
     try:
         stm = job.insert(data).returning(literal_column("*"))
         row = await pg.fetchrow(stm)
-        return json.dumps(dict(row), default=json_serial)
+        return dict(row)
     except Exception as err:
         raise err
