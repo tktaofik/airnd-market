@@ -6,9 +6,12 @@ from asyncpgsa import pg
 
 from sqlalchemy import (
     create_engine, MetaData, Table, Column, ForeignKey,
-    Integer, String, Date, Enum
+    Integer, String, Date, Enum, literal_column
 )
 
+from service.utils import json_serial
+
+# LINKS:
 
 # why session should be recreated
 # https://stackoverflow.com/questions/12223335/sqlalchemy-creating-vs-reusing-a-session
@@ -63,11 +66,8 @@ async def init_db(app):
 
 async def create_job(data):
     try:
-        row = await pg.fetchrow(job.insert(data))
-        row = await pg.fetchrow(job.select().where(job.c.id == row['id']))
-        row_dict = dict(row)
-        row_dict["createdAt"] = row_dict["createdAt"].isoformat()
-        row_dict["updatedAt"] = row_dict["updatedAt"].isoformat()
-        return json.dumps(row_dict)
+        stm = job.insert(data).returning(literal_column("*"))
+        row = await pg.fetchrow(stm)
+        return json.dumps(dict(row), default=json_serial)
     except Exception as err:
         raise err
