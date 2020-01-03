@@ -25,7 +25,7 @@ start: venv
 	@python app.py 
 
 start_watch: venv
-	@nodemon -L app.py 
+	@nodemon app.py 
 	
 service_dependencies:
 	@docker-compose up --remove-orphans -d

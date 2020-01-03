@@ -7,8 +7,7 @@ from . import db
 class JobService:
 
     @staticmethod
-    async def create_job(request):
-        data = json.loads(await request.text())
+    async def create_job(data):
         try:
             job = await db.create_job(data)
             return job
