@@ -48,7 +48,7 @@ A demo application showing developement of microservices, service interactions, 
 - [ ] Explore and find riders
 - [ ] Create a job request
 - [ ] Track an accepted and ongoing job request
-- [ ] Chat with riders through
+- [ ] Chat with riders through app
 - [ ] Manage job history
 - [ ] Rate the riders service
 - [ ] Update my account information

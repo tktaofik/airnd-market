@@ -74,9 +74,9 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 
 ## Architecture
 
-- Database `MongoDB`
-- Framework Python `Django`
-- Messaging `NATS`
+- Database `PostgreSQL`
+- HTTP server `aiohttp`
+- Messaging `kafka`
 - Metrics `??`
 - Logging `??`
 
