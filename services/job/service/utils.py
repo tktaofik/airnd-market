@@ -1,5 +1,4 @@
 from datetime import datetime, date
-
 from .db import job
 
 

@@ -1,6 +1,6 @@
 import json
-from aiohttp import web
 
+from aiohttp import web
 from . import db
 from .error import JobError
 

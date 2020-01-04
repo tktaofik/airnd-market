@@ -1,7 +1,6 @@
 from sqlalchemy import create_engine, MetaData
-
 from service.db import job
-from service.config import BASE_DIR, get_config
+from service.config import get_config
 
 
 DSN = "postgresql://{user}:{password}@{host}:{port}/{database}"
@@ -13,18 +12,17 @@ ADMIN_DB_URL = DSN.format(
 
 admin_engine = create_engine(ADMIN_DB_URL, isolation_level='AUTOCOMMIT')
 
-CONFIG_PATH = BASE_DIR / 'config' / 'job.yaml'
-CONFIG = get_config(['-c', CONFIG_PATH.as_posix()])
+CONFIG = get_config()
 DB_URL = DSN.format(**CONFIG['postgres'])
 
 engine = create_engine(DB_URL)
-config = CONFIG['postgres']
+postgres_config = CONFIG['postgres']
 
 
 def setup_db():
-    db_name = config['database']
-    db_user = config['user']
-    db_pass = config['password']
+    db_name = postgres_config['database']
+    db_user = postgres_config['user']
+    db_pass = postgres_config['password']
 
     conn = admin_engine.connect()
     conn.execute(f"DROP DATABASE IF EXISTS {db_name}")
@@ -36,8 +34,8 @@ def setup_db():
 
 
 def teardown_db():
-    db_name = config['database']
-    db_user = config['user']
+    db_name = postgres_config['database']
+    db_user = postgres_config['user']
 
     conn = admin_engine.connect()
     conn.execute("""

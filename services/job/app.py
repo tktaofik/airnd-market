@@ -1,8 +1,6 @@
 import logging
-import sys
 
 from aiohttp import web
-
 from service.routes import routes
 from service.middlewares import error_middleware
 from service.db import init_db

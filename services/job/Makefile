@@ -19,17 +19,17 @@ help:
 	@echo "make install"
 	@echo "    Install packages."
 
-venv: ../../python_venv/bin/activate
 
-start: venv
+start:
 	@python app.py 
 
-start_watch: venv
-	@nodemon app.py 
+start_watch:
+	@nodemon app.py  
 	
 service_dependencies:
 	@docker-compose up --remove-orphans -d
 	@sleep 10
+	@make teardown_db
 	@python init_db.py
 
 teardown_db:

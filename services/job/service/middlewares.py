@@ -1,7 +1,6 @@
 import json
 
 from aiohttp import web
-
 from .error import JobError
 
 

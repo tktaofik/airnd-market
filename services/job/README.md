@@ -87,6 +87,21 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 - Install _dependencies_ run `make install`
 - Install service dependencies and initialize database run `make service_dependencies`
 
+### Example `.env`
+
+```
+PORT=8081
+HOST=localhost
+
+DATABASE=job
+DB_USER=db_user
+DB_PASSWORD=db_password
+DB_HOST=localhost
+DB_PORT=5432
+DB_POOL_MIN_SIZE=1
+DB_POOL_MAX_SIZE=5
+```
+
 ### Run service
 
 - Run service run `make run`
