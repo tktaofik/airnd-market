@@ -3,7 +3,7 @@ import json
 from pydash import pick
 from aiohttp import web
 from .service import JobService
-from .utils import json_serial, get_create_job_properties
+from .utils import json_serialize, get_create_job_properties
 
 routes = web.RouteTableDef()
 
@@ -16,6 +16,6 @@ async def post_handler(request):
     data = pick(data, job_properties)
 
     job = await JobService.create_job(data)
-    job_json = json.dumps(job, default=json_serial)
+    job_json = json.dumps(job, default=json_serialize)
 
     return web.json_response(body=job_json, status=200)

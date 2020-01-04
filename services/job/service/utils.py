@@ -2,7 +2,7 @@ from datetime import datetime, date
 from .db import job
 
 
-def json_serial(obj):
+def json_serialize(obj):
     """JSON serializer for objects not serializable by default json code"""
 
     if isinstance(obj, (datetime, date)):
