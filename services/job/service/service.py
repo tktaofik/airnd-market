@@ -2,17 +2,15 @@ import json
 from aiohttp import web
 
 from . import db
+from .error import JobError
 
 
 class JobService:
 
     @staticmethod
     async def create_job(data):
-        try:
-            job = await db.create_job(data)
-            return job
-        except Exception as err:
-            print(err)
+        job = await db.create_job(data)
+        return job
 
     def delete_job(self):
         print("delete_job")

@@ -63,9 +63,6 @@ async def init_db(app):
 
 
 async def create_job(data):
-    try:
-        stm = job.insert(data).returning(literal_column("*"))
-        row = await pg.fetchrow(stm)
-        return dict(row)
-    except Exception as err:
-        raise err
+    stm = job.insert(data).returning(literal_column("*"))
+    row = await pg.fetchrow(stm)
+    return dict(row)
