@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: job
+Version: 0.1.0
+Summary: The Job service provides an API for creating, fetching, updating and deleting jobs
+Home-page: UNKNOWN
+Author: TK
+Author-email: tktaofik@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.8.0,<4.0.0

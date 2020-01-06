@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": true,
+  "python.pythonPath": "./services/job/.venv/bin/python3",
+  "python.autoComplete.extraPaths": ["./services/job"]
+}

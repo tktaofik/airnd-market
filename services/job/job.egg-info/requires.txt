@@ -1,0 +1,7 @@
+aiohttp<4.0.0,>=3.6.2
+asyncpgsa<0.27.0,>=0.26.1
+autopep8<2.0.0,>=1.4.4
+psycopg2-binary<3.0.0,>=2.8.4
+pydash<5.0.0,>=4.7.6
+pylint<3.0.0,>=2.4.4
+python-dotenv<0.11.0,>=0.10.3
