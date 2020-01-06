@@ -11,6 +11,5 @@ job/utils.py
 job.egg-info/PKG-INFO
 job.egg-info/SOURCES.txt
 job.egg-info/dependency_links.txt
-job.egg-info/entry_points.txt
 job.egg-info/requires.txt
 job.egg-info/top_level.txt

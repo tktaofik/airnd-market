@@ -82,19 +82,8 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 
 ## Development
 
-### Install dependencies
-
 - Navigate into service directory `services/job`
-- Activate virtual environment run `source ./.venv/bin/activate`
-- Install _dependencies_ run `make install`
-- Install service dependencies and initialize database run `make service_dependencies`
-
-### Start service
-
-- Start service `make start`
-- Start service and watch for changes `make start_watch`
-
-### Example `.env`
+- Add environment variables by creating file `.env` and add the following
 
 ```
 PORT=8081
@@ -109,7 +98,5 @@ DB_POOL_MIN_SIZE=1
 DB_POOL_MAX_SIZE=5
 ```
 
-### Run service
-
-- Run service run `make run`
-- Run service in watch mode run `make run_watch`
+- Install service _dependencies_ and initialize _postgreSQL_ database run `make install`
+- Start service run `make start`

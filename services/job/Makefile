@@ -2,34 +2,37 @@
 .DEFAULT: help
 
 help:
+	@echo "make install"
+	@echo "    Install service dependencies and initialize postgreSQL database"
 	@echo "make start"
 	@echo "    Run server."
-	@echo "make service_dependencies"
-	@echo "    Install service dependencies and create database"
 	@echo "make clean"
 	@echo "    Remove python artifacts and virtualenv."
-	@echo "make install"
-	@echo "    Install packages."
+	@echo "make requirements_txt"
+	@echo "    Export lock file into requirements.txt"
 
 start:
-	@poetry install
+	@make install
 	@poetry run nodemon app.py 
 	
 service_dependencies:
 	@docker-compose up --remove-orphans -d
 	@sleep 10
+	@make install
 	@make teardown_db
-	@python init_db.py
+	@poetry run python init_db.py
 
 teardown_db:
-	@python teardown_db.py
+	@poetry run python teardown_db.py
 
 clean:
 	@rm -rf `find . -name __pycache__`
 	@rm -rf .venv
+	@rm -rf requirements.txt
+	@rm -rf job.egg-info
 
 install:
 	@poetry install
 
-export_dependencies:
+requirements_txt:
 	@poetry export -f requirements.txt > requirements.txt

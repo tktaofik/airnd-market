@@ -5,7 +5,6 @@ description = "The Job service provides an API for creating, fetching, updating 
 authors = ["TK <tktaofik@gmail.com>"]
 
 [tool.poetry.scripts]
-start = "python:app.py"
 
 [tool.poetry.dependencies]
 python = "^3.8.0"
