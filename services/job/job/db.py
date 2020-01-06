@@ -65,3 +65,23 @@ async def create_job(data):
     stm = job.insert(data).returning(literal_column("*"))
     row = await pg.fetchrow(stm)
     return dict(row)
+
+
+async def get_job(id: int):
+    stm = job.select().where(job.c.id == id)
+    row = await pg.fetchrow(stm)
+    if row == None:
+        return None
+    return dict(row)
+
+
+async def get_jobs():
+    stm = job.select()
+    rows = await pg.query(stm)
+    jobs = map(lambda row: dict(row), rows)
+    return list(jobs)
+
+
+async def delete_job(id: int):
+    stm = job.delete().where(job.c.id == id)
+    await pg.fetchrow(stm)
