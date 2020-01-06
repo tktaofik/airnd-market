@@ -7,7 +7,6 @@ load_dotenv()
 
 def get_config():
     return {
-        "host": os.getenv('HOST'),
         "port": os.getenv('PORT'),
         "postgres": {
             "database": os.getenv('DATABASE'),

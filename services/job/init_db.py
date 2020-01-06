@@ -2,21 +2,22 @@ from sqlalchemy import create_engine, MetaData
 from job.db import job
 from job.config import get_config
 
+CONFIG = get_config()
+postgres_config = CONFIG['postgres']
 
 DSN = "postgresql://{user}:{password}@{host}:{port}/{database}"
 
 ADMIN_DB_URL = DSN.format(
     user='postgres', password='postgres', database='postgres',
-    host='localhost', port=5432
+    host=postgres_config['host'], port=5432
 )
 
 admin_engine = create_engine(ADMIN_DB_URL, isolation_level='AUTOCOMMIT')
 
-CONFIG = get_config()
+
 DB_URL = DSN.format(**CONFIG['postgres'])
 
 engine = create_engine(DB_URL)
-postgres_config = CONFIG['postgres']
 
 
 def setup_db():
