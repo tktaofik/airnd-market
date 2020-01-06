@@ -12,14 +12,15 @@ class JobService:
         job = await db.create_job(data)
         return job
 
-    def delete_job(self):
-        print("delete_job")
+    @staticmethod
+    async def get_job(id: int):
+        job = await db.get_job(id)
+        return job
 
-    def update_job(self):
-        print("update_job")
+    @staticmethod
+    async def delete_job(id: int):
+        await db.delete_job(id)
 
-    def get_job(self):
-        print("get_job")
+    # update_job
 
-    def find_jobs(self):
-        print("find_jobs")
+    # find_jobs
