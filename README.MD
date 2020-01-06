@@ -123,13 +123,11 @@ A demo application showing developement of microservices, service interactions, 
 - [ ] Search Engine [Elastic Search](https://www.elastic.co/)
 - [ ] Load Generator [Python](https://locust.io/)
 - [ ] RPC [gRPC](https://grpc.io/)
-- [ ] Material UI [Angular](https://material.angular.io/)
 - [ ] Material UI [React](https://material-ui.com/)
-- [ ] Material UI [Vue](https://vuematerial.io/components/app)
 
 # Services
 
-- [ ] `Customer UI` (React, material-ui, Docker)
+- [ ] `Client UI` (React, material-ui, Docker)
 
   - [ ] Signup
   - [ ] Login
@@ -143,63 +141,38 @@ A demo application showing developement of microservices, service interactions, 
   - [ ] Chat messenger
   - [ ] List job history
 
-- [ ] `Rider UI` (Angular, material-ui, Docker)
-
-  - [ ] Signup
-  - [ ] Login
-  - [ ] List my jobs
-  - [ ] Update job status
-  - [ ] List notifications
-  - [ ] Chat messenger
-  - [ ] List job history
-
-- [ ] `History UI` (Vue, material-ui, Docker)
-
-  - [ ] Signup
-  - [ ] Login
-  - [ ] List my jobs
-  - [ ] Update job status
-  - [ ] List notifications
-  - [ ] Chat messenger
-  - [ ] List job history
-
 - [ ] `REST API Gateway` (Traefik, Docker)
 
   - [ ] It receives requests on behalf of the system and finds out which components are responsible for handling them.
 
-- [ ] `Job` (REST, MongoDB, Python, Docker)
+- [ ] `GraphQL API Gateway` (GraphQL, Docker)
+
+  - [ ] Graph API for the system.
+
+- [ ] `Job` (REST, PostgreSQL, Python, Docker)
 
   - [ ] Create job
   - [ ] Get job
   - [ ] Delete job
   - [ ] Update job
 
-- [ ] `Auth` (REST, gRPC, Python, Docker)
-
-  - [ ] Generate user token for app access
-  - [ ] Renew user tokens for app access
-  - [ ] Check if token is valid
-
-- [ ] `User` (REST, Postgresql, Go, Docker)
+- [ ] `User` (REST, MongoDB, Python, Docker)
 
   - [ ] Sign up
   - [ ] Login
   - [ ] Get user
   - [ ] Delete user
   - [ ] Update user
+  - [ ] Authenticate user
+  - [ ] Generate user token for app access
+  - [ ] Renew user tokens for app access
+  - [ ] Check if token is valid
 
 - [ ] `Chat` (Web-Socket, Go, Docker)
 
   - Creates rooms for users to chat
 
-- [ ] `Notification` (REST, Message Broker, CockroachDB, JAVA, spring, Docker)
-  - [ ] Create notification
-  - [ ] Delete notification
-
-* [ ] `History` (GraphQL, NodeJS, Typescript, Docker)
-
-  - [ ] Get job history for Riders and Customers
-  - [ ] Get notifications created linked to a job
+* [ ] `Activity` (NodeJS, Typescript, Docker)
 
 * [ ] `Load-generator` (Python, Docker)
   - [ ] Generate load for the services

@@ -25,7 +25,3 @@ class JobService:
     @staticmethod
     async def delete_job(id: int):
         await db.delete_job(id)
-
-    # update_job
-
-    # find_jobs
