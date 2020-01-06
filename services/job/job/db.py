@@ -53,7 +53,6 @@ async def init_db(app):
     await pg.init(
         host=config['db_host'],
         port=config['db_port'],
-        database=config['db_name'],
         user=config['db_user'],
         password=config['db_password'],
         min_size=1,

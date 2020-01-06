@@ -21,7 +21,8 @@ The Job service provides an API for creating, fetching, updating and deleting jo
   "riderId": String,
   "title": String,
   "status": new | inProgress | cancelled | done,
-  "address": String,
+  "pickupAddress": String,
+  "dropoffAddress": String,
   "description": String,
   "createdAt": Date,
   "updatedAt": Date
@@ -76,7 +77,7 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 
 - Database `PostgreSQL`
 - HTTP server `aiohttp`
-- Messaging `kafka`
+- Messaging `Nats`
 - Metrics `??`
 - Logging `??`
 

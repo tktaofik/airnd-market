@@ -20,8 +20,8 @@ services:
     environment:
       - PORT=8081
       - DB_NAME=job
-      - DB_USER=db_user
-      - DB_PASSWORD=db_password
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
       - DB_HOST=postgres
       - DB_PORT=5432
       - DB_POOL_MIN_SIZE=1

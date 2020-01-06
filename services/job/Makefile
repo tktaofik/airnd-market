@@ -24,8 +24,7 @@ database:
 	@docker-compose run -d -p 5432:5432 --name=postgres postgres
 	@sleep 10
 	@make install
-	@poetry run python teardown_db.py
-	@poetry run python init_db.py
+	@poetry run python init-postgres.py
 
 install:
 	@poetry install
@@ -45,6 +44,5 @@ docker-compose:
 	@docker-compose down && docker-compose up --build --remove-orphans
 
 docker-compose-init:
-	@python teardown_db.py
-	@python init_db.py
+	@python init-postgres.py
 	@nodemon app.py 
