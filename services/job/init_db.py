@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, MetaData
-from service.db import job
-from service.config import get_config
+from job.db import job
+from job.config import get_config
 
 
 DSN = "postgresql://{user}:{password}@{host}:{port}/{database}"
@@ -64,5 +64,4 @@ def sample_data():
 if __name__ == '__main__':
     setup_db()
     create_tables()
-    sample_data()
     print(f"Database initialized with sample data DB_URL: {DB_URL}")

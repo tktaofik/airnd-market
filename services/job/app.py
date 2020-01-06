@@ -1,10 +1,10 @@
 import logging
 
 from aiohttp import web
-from service.routes import routes
-from service.middlewares import error_middleware
-from service.db import init_db
-from service.config import get_config
+from job.routes import routes
+from job.middlewares import error_middleware
+from job.db import init_db
+from job.config import get_config
 
 
 async def init_app(config):

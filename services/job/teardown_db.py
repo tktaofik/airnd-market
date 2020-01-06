@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, MetaData
-from service.config import get_config
+from job.config import get_config
 
 DSN = "postgresql://{user}:{password}@{host}:{port}/{database}"
 

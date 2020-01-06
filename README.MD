@@ -206,16 +206,10 @@ A demo application showing developement of microservices, service interactions, 
 
 ## Development
 
-### Install dependencies and virtual environment
+### Install project dependencies
 
 - Install _brew_ on your system
 - Install _Docker_ on your system
 - Install _nodeJS_ globally on your system
+- Install _python-poetry_ globally on your system [python-poetry](https://python-poetry.org/docs/#installation)
 - Install _nodemon_ globally on your system run `npm i -g nodemon`
-- Install _pyenv_ to install multiple versions of python `brew install pyenv`
-- Install virtual environment `make python_venv`
-- Activate dev virtual environment run `source ./python_venv/bin/activate`
-
-### Exit virtual environment
-
-- While in virtual environment run `deactivate`

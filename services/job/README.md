@@ -84,8 +84,15 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 
 ### Install dependencies
 
+- Navigate into service directory `services/job`
+- Activate virtual environment run `source ./.venv/bin/activate`
 - Install _dependencies_ run `make install`
 - Install service dependencies and initialize database run `make service_dependencies`
+
+### Start service
+
+- Start service `make start`
+- Start service and watch for changes `make start_watch`
 
 ### Example `.env`
 
