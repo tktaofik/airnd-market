@@ -21,6 +21,13 @@ async def post_handler(request: web.Request):
     return web.json_response(body=job_json, status=201)
 
 
+@routes.get('/api/job')
+async def get_jobs_handler(request: web.Request):
+    jobs = await JobService.get_jobs()
+    jobs_json = json.dumps(jobs, default=json_serialize)
+    return web.json_response(body=jobs_json, status=200)
+
+
 @routes.get('/api/job/{id}')
 async def get_handler(request: web.Request):
     id: int = int(request.match_info['id'])

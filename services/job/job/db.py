@@ -75,6 +75,13 @@ async def get_job(id: int):
     return dict(row)
 
 
+async def get_jobs():
+    stm = job.select()
+    rows = await pg.query(stm)
+    jobs = map(lambda row: dict(row), rows)
+    return list(jobs)
+
+
 async def delete_job(id: int):
     stm = job.delete().where(job.c.id == id)
     await pg.fetchrow(stm)
