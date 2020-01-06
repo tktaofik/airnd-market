@@ -4,8 +4,6 @@
 help:
 	@echo "make start"
 	@echo "    Run server."
-	@echo "make start_watch"
-	@echo "    Run server and watch for changes"
 	@echo "make service_dependencies"
 	@echo "    Install service dependencies and create database"
 	@echo "make clean"
@@ -13,12 +11,9 @@ help:
 	@echo "make install"
 	@echo "    Install packages."
 
-
 start:
-	@python app.py 
-
-start_watch:
-	@nodemon app.py  
+	@poetry install
+	@poetry run nodemon app.py 
 	
 service_dependencies:
 	@docker-compose up --remove-orphans -d
