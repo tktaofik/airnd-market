@@ -28,9 +28,7 @@ def main():
 
     app = init_app(config)
 
-    web.run_app(app,
-                host=config['host'],
-                port=config['port'])
+    web.run_app(app, port=config['port'])
 
 
 if __name__ == '__main__':

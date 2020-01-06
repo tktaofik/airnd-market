@@ -87,9 +87,7 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 
 ```
 PORT=8081
-HOST=localhost
-
-DATABASE=job
+DB_NAME=job
 DB_USER=db_user
 DB_PASSWORD=db_password
 DB_HOST=localhost
@@ -98,5 +96,6 @@ DB_POOL_MIN_SIZE=1
 DB_POOL_MAX_SIZE=5
 ```
 
-- Install service _dependencies_ and initialize _postgreSQL_ database run `make install`
-- Start service run `make start`
+- Install _dependencies_ `make install`
+- Start _postgreSQL_ `make database`
+- Start service `make start`

@@ -49,13 +49,13 @@ job = Table(
 
 
 async def init_db(app):
-    config = app['config']['postgres']
+    config = app['config']
     await pg.init(
-        host=config['host'],
-        port=config['port'],
-        database=config['database'],
-        user=config['user'],
-        password=config['password'],
+        host=config['db_host'],
+        port=config['db_port'],
+        database=config['db_name'],
+        user=config['db_user'],
+        password=config['db_password'],
         min_size=1,
         max_size=10,
     )

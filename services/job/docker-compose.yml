@@ -6,13 +6,33 @@
 version: "3.7"
 
 services:
+  job:
+    build:
+      context: .
+    container_name: job
+    restart: always
+    volumes:
+      - .:/job
+    ports:
+      - 8081:8081
+    depends_on:
+      - postgres
+    environment:
+      - PORT=8081
+      - DB_NAME=job
+      - DB_USER=db_user
+      - DB_PASSWORD=db_password
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_POOL_MIN_SIZE=1
+      - DB_POOL_MAX_SIZE=5
+    command: make docker-compose-init
   postgres:
     image: postgres:12.1
-    hostname: postgres
     container_name: postgres
     restart: always
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres

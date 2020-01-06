@@ -13,9 +13,7 @@ class JobService:
         return job
 
     def delete_job(self):
-        print("delete_job") 
-
-        
+        print("delete_job")
 
     def update_job(self):
         print("update_job")
