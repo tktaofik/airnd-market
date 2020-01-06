@@ -16,7 +16,6 @@ help:
 	@echo "    Run service with docker-compose"
 
 start:
-	@make install
 	@poetry run nodemon app.py 
 	
 database:
