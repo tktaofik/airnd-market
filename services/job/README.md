@@ -87,7 +87,7 @@ The Job service provides an API for creating, fetching, updating and deleting jo
 
 ```
 PORT=8081
-DATABASE=job
+DB_NAME=job
 DB_USER=db_user
 DB_PASSWORD=db_password
 DB_HOST=localhost

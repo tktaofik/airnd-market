@@ -12,6 +12,8 @@ help:
 	@echo "    Remove python artifacts and virtualenv"
 	@echo "make requirements_txt"
 	@echo "    Export lock file into requirements.txt"
+	@echo "make docker-compose"
+	@echo "    Run service with docker-compose"
 
 start:
 	@make install
@@ -38,3 +40,11 @@ clean:
 	@rm -rf .venv
 	@rm -rf requirements.txt
 	@rm -rf job.egg-info
+
+docker-compose:
+	@docker-compose down && docker-compose up --build --remove-orphans
+
+docker-compose-init:
+	@python teardown_db.py
+	@python init_db.py
+	@nodemon app.py 
