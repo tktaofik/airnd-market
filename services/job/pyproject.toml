@@ -15,6 +15,7 @@ python-dotenv = "^0.10.3"
 psycopg2-binary = "^2.8.4"
 autopep8 = "^1.4.4"
 pylint = "^2.4.4"
+sentry-sdk = "^0.13.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"

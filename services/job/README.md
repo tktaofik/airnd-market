@@ -93,8 +93,6 @@ DB_USER=db_user
 DB_PASSWORD=db_password
 DB_HOST=localhost
 DB_PORT=5432
-DB_POOL_MIN_SIZE=1
-DB_POOL_MAX_SIZE=5
 ```
 
 - Install _dependencies_ `make install`

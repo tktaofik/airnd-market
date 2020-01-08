@@ -16,7 +16,7 @@ help:
 	@echo "    Run service with docker-compose"
 
 start:
-	@poetry run nodemon app.py 
+	@poetry run nodemon main.py 
 	
 database:
 	@docker-compose down
@@ -44,4 +44,4 @@ docker-compose:
 
 docker-compose-init:
 	@python init-postgres.py
-	@nodemon app.py 
+	@nodemon main.py 

@@ -10,6 +10,6 @@ RUN apt-get update && \
     npm i -g nodemon && \
     pip install -r requirements.txt
 
-CMD python app.py
+CMD python main.py
 
 EXPOSE 8081
