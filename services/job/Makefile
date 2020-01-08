@@ -36,6 +36,7 @@ build:
 clean:
 	@rm -rf `find . -name __pycache__`
 	@rm -rf .venv
+	@rm -rf poetry.lock
 	@rm -rf requirements.txt
 	@rm -rf job.egg-info
 
