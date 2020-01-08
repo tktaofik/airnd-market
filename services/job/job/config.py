@@ -13,4 +13,5 @@ def get_config():
         "db_password": os.getenv('DB_PASSWORD'),
         "db_host": os.getenv('DB_HOST'),
         "db_port": os.getenv('DB_PORT'),
+        "sentry_key": os.getenv('SENTRY_KEY'),
     }
