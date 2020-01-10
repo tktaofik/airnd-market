@@ -4,7 +4,7 @@
 
 The Job service provides an API for creating, fetching, updating and deleting jobs
 
-## Tasks
+## API
 
 - [ ] Create a job
 - [ ] Update a job

@@ -1,0 +1,28 @@
+#
+# Ref:
+#   https://docs.docker.com/compose/compose-file
+#
+
+version: "3.7"
+
+services:
+  user:
+    build:
+      context: .
+    container_name: user
+    restart: always
+    volumes:
+      - .:/user
+    ports:
+      - 8082:8082
+    depends_on:
+      - mongo
+    environment:
+      - PORT=8082
+    command: make docker-compose-init
+  mongo:
+    image: mongo:3.6.2
+    restart: always
+    ports:
+      - "27017:27017"
+    command: --smallfiles

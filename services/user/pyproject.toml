@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "user"
+version = "0.1.0"
+description = "The User service provides an API for managing and authenticating users in the system"
+authors = ["TK <tktaofik@gmail.com>"]
+
+[tool.poetry.scripts]
+
+[tool.poetry.dependencies]
+python = "^3.8.0"
+aiohttp = "^3.6.2"
+pydash = "^4.7.6"
+asyncpgsa = "^0.26.1"
+python-dotenv = "^0.10.3"
+psycopg2-binary = "^2.8.4"
+autopep8 = "^1.4.4"
+pylint = "^2.4.4"
+sentry-sdk = "^0.13.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.6"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
