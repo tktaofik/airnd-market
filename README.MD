@@ -64,7 +64,7 @@ A demo application showing developement of microservices, service interactions, 
 
 # User Flow
 
-## Customer
+## Client
 
 1. Signup
    - Name

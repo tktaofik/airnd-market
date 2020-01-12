@@ -20,9 +20,10 @@ start:
 	
 database:
 	@docker-compose down
-	@docker-compose run -d -p 27017:27017 --name=mongo mongo
+	@docker-compose run -d -p 5432:5432 --name=user_postgres postgres
 	@sleep 10
 	@make install
+	@poetry run python init-postgres.py
 
 install:
 	@poetry install

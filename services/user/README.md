@@ -23,6 +23,8 @@ The User service provides an API for managing users, authenticating requests fro
   "firstName": String,
   "lastName": String,
   "email": String,
+  "type": client | rider,
+  "disabled": Boolean,
   "createdAt": Date,
   "updatedAt": Date
 }

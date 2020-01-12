@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, MetaData
-from job.db import job
-from job.config import get_config
+from user.db import user
+from user.config import get_config
 
 config = get_config()
 
@@ -16,21 +16,19 @@ engine = create_engine(
 
 def setup_db():
     meta = MetaData()
-    meta.drop_all(bind=engine, tables=[job])
-    meta.create_all(bind=engine, tables=[job])
+    meta.drop_all(bind=engine, tables=[user])
+    meta.create_all(bind=engine, tables=[user])
 
 
 def add_sample_data():
     conn = engine.connect()
-    conn.execute(job.insert(), [
+    conn.execute(user.insert(), [
         {
-            "userId": "userId",
-            "riderId": "riderId",
-            "title": "title",
-            "status": "new",
-            "pickupAddress": "address",
-            "dropoffAddress": "address",
-            "description": "description",
+            "firstName": "firstName",
+            "lastName": "lastName",
+            "email": "email@email.com",
+            "type": "client",
+            "disabled": False,
         }
     ])
     conn.close()

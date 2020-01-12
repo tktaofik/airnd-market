@@ -20,7 +20,7 @@ start:
 	
 database:
 	@docker-compose down
-	@docker-compose run -d -p 5432:5432 --name=postgres postgres
+	@docker-compose run -d -p 5432:5432 --name=job_postgres postgres
 	@sleep 10
 	@make install
 	@poetry run python init-postgres.py

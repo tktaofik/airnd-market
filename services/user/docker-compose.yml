@@ -16,13 +16,16 @@ services:
     ports:
       - 8082:8082
     depends_on:
-      - mongo
+      - postgres
     environment:
       - PORT=8082
     command: make docker-compose-init
-  mongo:
-    image: mongo:3.6.2
+  postgres:
+    image: postgres:12.1
+    container_name: postgres
     restart: always
     ports:
-      - "27017:27017"
-    command: --smallfiles
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
