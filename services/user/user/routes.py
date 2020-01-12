@@ -24,7 +24,7 @@ async def post_handler(request: web.Request):
     user = await UserService.create_user(data)
     user_json = json.dumps(user, default=json_serialize)
 
-    logging.info("User yeap")
+    logging.info(f"User created id: {user['id']}")
 
     return web.json_response(body=user_json, status=201)
 

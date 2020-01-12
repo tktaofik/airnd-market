@@ -25,6 +25,7 @@ user = Table(
     Column("firstName", String),
     Column("lastName", String),
     Column("email", String),
+    Column("password", String),
     Column("type", Enum(UserTypes), default=UserTypes.client),
     Column("createdAt", DateTime, default=datetime.utcnow()),
     Column("updatedAt", DateTime, default=datetime.utcnow())
@@ -46,7 +47,9 @@ async def init_db(app):
 async def create_user(data):
     stm = user.insert(data).returning(literal_column("*"))
     row = await pg.fetchrow(stm)
-    return dict(row)
+    created_user = dict(row)
+    del created_user['password']
+    return created_user
 
 
 async def get_user(id):

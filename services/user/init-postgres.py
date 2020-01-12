@@ -27,6 +27,7 @@ def add_sample_data():
             "firstName": "firstName",
             "lastName": "lastName",
             "email": "email@email.com",
+            "password": "password",
             "type": "client",
             "disabled": False,
         }
