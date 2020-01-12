@@ -1,7 +1,7 @@
 import enum
 import json
-import uuid
 
+from uuid import uuid4
 from datetime import datetime
 from asyncpgsa import pg
 from sqlalchemy import (
@@ -37,7 +37,7 @@ class Status(enum.Enum):
 
 job = Table(
     'job', meta,
-    Column("id", UUID, primary_key=True, default=str(uuid.uuid4())),
+    Column("id", UUID(as_uuid=True), primary_key=True, default=uuid4),
     Column("userId", String),
     Column("riderId", String),
     Column("title", String),
