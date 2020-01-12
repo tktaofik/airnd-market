@@ -122,6 +122,7 @@ A demo application showing developement of microservices, service interactions, 
 - [ ] Load Generator [Python](https://locust.io/)
 - [ ] RPC [gRPC](https://grpc.io/)
 - [ ] Material UI [React](https://material-ui.com/)
+- [ ] PostgreSQL Client for the Mac [Postico](https://eggerapps.at/postico/)
 
 # Services
 

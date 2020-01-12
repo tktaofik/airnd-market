@@ -45,4 +45,5 @@ def sample_data():
 if __name__ == '__main__':
     setup_db()
     create_tables()
+    sample_data()
     print(f"Database initialized")

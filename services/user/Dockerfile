@@ -1,8 +1,8 @@
 FROM python:3.8.1
 
-COPY . /job
+COPY . /user
 
-WORKDIR /job
+WORKDIR /user
 
 RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_10.x | bash && \
@@ -12,4 +12,4 @@ RUN apt-get update && \
 
 CMD python main.py
 
-EXPOSE 8081
+EXPOSE 8082

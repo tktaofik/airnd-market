@@ -30,7 +30,7 @@ async def get_jobs_handler(request: web.Request):
 
 @routes.get('/api/job/{id}')
 async def get_handler(request: web.Request):
-    id: int = int(request.match_info['id'])
+    id = str(request.match_info['id'])
 
     job = await JobService.get_job(id)
 
@@ -43,6 +43,6 @@ async def get_handler(request: web.Request):
 
 @routes.delete('/api/job/{id}')
 async def delete_handler(request: web.Request):
-    id: int = int(request.match_info['id'])
+    id = str(request.match_info['id'])
     await JobService.delete_job(id)
     return web.json_response(status=204)

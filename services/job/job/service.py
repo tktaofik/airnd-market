@@ -13,7 +13,7 @@ class JobService:
         return job
 
     @staticmethod
-    async def get_job(id: int):
+    async def get_job(id):
         job = await db.get_job(id)
         return job
 
@@ -23,5 +23,5 @@ class JobService:
         return jobs
 
     @staticmethod
-    async def delete_job(id: int):
+    async def delete_job(id):
         await db.delete_job(id)

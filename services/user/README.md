@@ -2,16 +2,18 @@
 
 ## Description
 
-The User service provides an API for managing and authenticating users in the system
+The User service provides an API for managing users, authenticating requests from the client and service to service communication.
 
 ## API
 
-- [ ] Create a user
-- [ ] Update a user
-- [ ] Login user
-- [ ] Get a user
-- [ ] Authenticate user
-- [ ] Renew user token
+- [ ] Create user
+- [ ] Update user
+- [ ] Get user
+- [ ] Login
+- [ ] Logout
+- [ ] Authenticate requests (Create JWT)
+- [ ] Expire JWT after 5 min
+- [ ] Extend JWT if used under 5 min
 
 ## Model
 

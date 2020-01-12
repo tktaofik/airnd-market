@@ -1,5 +1,6 @@
 import enum
 import json
+import uuid
 
 from datetime import datetime
 from asyncpgsa import pg
@@ -7,6 +8,7 @@ from sqlalchemy import (
     create_engine, MetaData, Table, Column, ForeignKey,
     Integer, String, DateTime, Enum, literal_column
 )
+from sqlalchemy.dialects.postgresql import UUID
 
 # LINKS:
 
@@ -35,7 +37,7 @@ class Status(enum.Enum):
 
 job = Table(
     'job', meta,
-    Column("id", Integer, primary_key=True),
+    Column("id", UUID, primary_key=True, default=str(uuid.uuid4())),
     Column("userId", String),
     Column("riderId", String),
     Column("title", String),
@@ -66,7 +68,7 @@ async def create_job(data):
     return dict(row)
 
 
-async def get_job(id: int):
+async def get_job(id):
     stm = job.select().where(job.c.id == id)
     row = await pg.fetchrow(stm)
     if row == None:
@@ -81,6 +83,6 @@ async def get_jobs():
     return list(jobs)
 
 
-async def delete_job(id: int):
+async def delete_job(id):
     stm = job.delete().where(job.c.id == id)
     await pg.fetchrow(stm)
