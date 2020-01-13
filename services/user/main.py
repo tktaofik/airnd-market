@@ -39,7 +39,7 @@ async def init_app(config):
 def main():
     config = get_config()
 
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.INFO)
 
     app = init_app(config)
 

@@ -16,6 +16,8 @@ psycopg2-binary = "^2.8.4"
 autopep8 = "^1.4.4"
 pylint = "^2.4.4"
 sentry-sdk = "^0.13.5"
+passlib = "^1.7.2"
+argon2_cffi = "^19.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.6"
