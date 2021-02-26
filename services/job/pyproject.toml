@@ -8,7 +8,7 @@ authors = ["TK <tktaofik@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8.0"
-aiohttp = "^3.6.2"
+aiohttp = "^3.7.4"
 pydash = "^4.7.6"
 asyncpgsa = "^0.26.1"
 python-dotenv = "^0.10.3"
